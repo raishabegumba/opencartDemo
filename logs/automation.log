@@ -1,0 +1,7 @@
+03:03:2025 - 07:40:17.479 INFO testCases.TC001_AccountRegisterationTest [main] - Clicked on my account link
+03:03:2025 - 07:40:18.034 INFO testCases.TC001_AccountRegisterationTest [main] - Clicked on registeration link
+03:03:2025 - 07:40:18.038 INFO testCases.TC001_AccountRegisterationTest [main] - Providing customer details
+03:03:2025 - 07:40:19.748 INFO testCases.TC001_AccountRegisterationTest [main] - Validating Account success message
+03:03:2025 - 07:40:19.796 INFO testCases.TC001_AccountRegisterationTest [main] - ****End TC001_AccountRegisterationTest***
+03:03:2025 - 07:40:22.680 INFO testCases.TC002_LoginTest [main] - ****Start TC002_LoginTest ***********
+03:03:2025 - 07:40:24.596 INFO testCases.TC002_LoginTest [main] - ****End TC002_LoginTest ***********

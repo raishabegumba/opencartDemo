@@ -1,0 +1,11 @@
+02:03:2025 - 14:05:57.926 INFO testCases.TC001_AccountRegisterationTest [main] - Validating Account success message
+02:03:2025 - 14:05:58.020 INFO testCases.TC001_AccountRegisterationTest [main] - ****End TC001_AccountRegisterationTest***
+02:03:2025 - 14:06:05.836 INFO testCases.TC002_LoginTest [main] - ****Start TC002_LoginTest ***********
+02:03:2025 - 14:06:07.795 INFO testCases.TC002_LoginTest [main] - ****End TC002_LoginTest ***********
+02:03:2025 - 14:08:25.010 INFO internal.Utils [main] - [TestNG] Running:
+  C:\Users\admin\eclipse-workspace\myprojects\OpencartDemo\opencart-ecommerce\docker-grid.xml
+
+02:03:2025 - 14:08:34.060 INFO testCases.TC001_AccountRegisterationTest [main] - ***Starting TC001_AccountRegisterationTest*** 
+02:03:2025 - 14:08:34.648 INFO testCases.TC001_AccountRegisterationTest [main] - Clicked on my account link
+02:03:2025 - 14:08:35.181 INFO testCases.TC001_AccountRegisterationTest [main] - Clicked on registeration link
+02:03:2025 - 14:08:35.184 INFO testCases.TC001_AccountRegisterationTest [main] - Providing customer details
