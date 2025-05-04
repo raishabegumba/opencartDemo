@@ -28,11 +28,15 @@ import org.apache.logging.log4j.LogManager;
 
 public class BaseClass {
 
+
 	public static WebDriver driver;
 	public Properties p;
 	public Logger logger;
 
+
+
 	@BeforeClass(groups= {"Sanity","Regression","Master","Datadriven"})
+	//@BeforeClass
 	@Parameters({"browser","os"})
 	public void setUp(String br, String os) throws IOException
 	{
@@ -41,15 +45,16 @@ public class BaseClass {
 		p=new Properties();
 		p.load(fr);
 
-		//load logger
+		//load logger to get the specified Logger in this LogManager instance
 		logger= LogManager.getLogger(this.getClass());
 		
+
 		if(p.getProperty("execution_env").equalsIgnoreCase("remote"))
 		{
 			DesiredCapabilities capabilities = new DesiredCapabilities();
-			
-		//	capabilities.setPlatform(Platform.WIN11);
-		//	capabilities.setBrowserName("chrome");
+
+			//	capabilities.setPlatform(Platform.WIN11);
+			//	capabilities.setBrowserName("chrome");
 
 			//os
 			if(os.equalsIgnoreCase("windows"))
@@ -59,7 +64,7 @@ public class BaseClass {
 			else if(os.equalsIgnoreCase("linux"))
 			{
 				capabilities.setPlatform(Platform.LINUX);
-				
+
 			}
 			else if (os.equalsIgnoreCase("mac"))
 			{
@@ -70,58 +75,91 @@ public class BaseClass {
 				System.out.println("No matching os");
 				return;
 			}
-			
-		//browser
-		switch(br.toLowerCase())
-		{
-		case "chrome": driver = new ChromeDriver();break;
-		case "firefox": driver= new FirefoxDriver(); break;
-		case "edge": driver = new EdgeDriver(); break;
-		case "safari": driver = new SafariDriver(); break;
-		default:System.out.println("invalid browser"); return;
-		
-		}
-		//launch url 
-		driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),capabilities);
-	}	
-		
-		
-		if(p.getProperty("execution_env").equalsIgnoreCase("local")){
-		       switch(br.toLowerCase()){
-				case "chrome": driver = new ChromeDriver(); break;
-				case "firefox": driver = new FirefoxDriver(); break;
-				case "edge": driver = new EdgeDriver(); break;
-				case "safari": driver = new SafariDriver(); break;
-				default : System.out.println("please enter istalled browser"); return;
-				}
-			}
 
-		driver.manage().deleteAllCookies();
+			//browser
+			switch(br.toLowerCase())
+			{
+			/*case "chrome": driver = new ChromeDriver();break;
+			case "firefox": driver= new FirefoxDriver(); break;
+			case "edge": driver = new EdgeDriver(); break;
+			case "safari": driver = new SafariDriver(); break;
+			default:System.out.println("invalid browser"); return;*/
+			
+			case "chrome": capabilities.setBrowserName("chrome");
+			System.out.println("=============Execution started on" +br+ " browser================");
+			break;
+			
+		    case "firefox": capabilities.setBrowserName("firefox"); 
+		    System.out.println("=============Execution started on" +br+ " browser================");
+		    break;
+		    case "edge": capabilities.setBrowserName("MicrosoftEdge");
+		    System.out.println("=============Execution started on" +br+ " browser================");
+		    break; // Use MicrosoftEdge here
+		    case "safari": capabilities.setBrowserName("safari");
+		    System.out.println("=============Execution started on" +br+ " browser================");
+		    break;
+		    default: System.out.println("Invalid browser"); return;
+
+			}
+	
+			// Initialize the RemoteWebDriver
+			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
+			  // **Use environment variable for remote Hub URL**
+	       /* String hubURL = System.getenv("SELENIUM_HUB_URL") != null ?
+	                        System.getenv("SELENIUM_HUB_URL") : 
+	                        "http://localhost:4444/wd/hub"; // Fallback to localhost
+
+	        driver = new RemoteWebDriver(new URL(hubURL), capabilities);
+	        logger.info("Connected to Selenium Grid at: " + hubURL);*/
+		}	
+
+
+		if(p.getProperty("execution_env").equalsIgnoreCase("local")){
+			switch(br.toLowerCase()){
+			case "chrome": driver = new ChromeDriver(); break;
+			case "firefox": driver = new FirefoxDriver(); break;
+			case "edge": driver = new EdgeDriver(); break;
+			case "safari": driver = new SafariDriver(); break;
+			default : System.out.println("please enter installed browser"); return;
+			}
+		}
+
+		driver.manage().deleteAllCookies();// to remove saved credential/info
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
-		driver.get(p.getProperty("appURL"));
-		
-		
+		driver.get(p.getProperty("appURL"));//fetch the value when KEY is passed from property file
+
 	}
 
 	@AfterClass(groups= {"Sanity","Regression","Master","Datadriven"})
+	//@AfterClass
 	public void tearDown()
 	{
-		driver.quit();
+		 // Only call quit() if the driver is not null and still running
+        if (driver != null) {
+            try {
+                driver.quit();
+            } catch (Exception e) {
+                logger.error("Error while quitting the WebDriver: " + e.getMessage());
+            }
+        }
 	}
-	
-	 public String captureScreen (String tname) throws IOException {
-		 String timeStamp = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-		 TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
-		 File sourceFile = takesScreenshot.getScreenshotAs (OutputType.FILE);
-		 String targetFilePath=System.getProperty("user.dir")+"\\screenshots\\" +tname + timeStamp + ".png";
-		// String targetFilePath = ("D:\\Frameworks\\NopCommerce1.0\\screenshots" + tname+timeStamp+".png");
-		 File targetFile=new File(targetFilePath);
-		 sourceFile.renameTo(targetFile);			 
-		 return targetFilePath;
-		 }
 
+	public String captureScreen(String tname) throws IOException {
+	    if (driver == null) {
+	        throw new IllegalStateException("WebDriver is null. Cannot capture screenshot.");
+	    }
 
+	    String timeStamp = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+	    TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
+	    File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
+	    String targetFilePath = System.getProperty("user.dir") + "\\screenshots\\" + tname + timeStamp + ".png";
+	    File targetFile = new File(targetFilePath);
+	    sourceFile.renameTo(targetFile);             
+	    return targetFilePath;
+	}
+
+	/// to set random firstname, lastname 
 	public String randomString()
 	{
 		String genString=RandomStringUtils.randomAlphabetic(8);

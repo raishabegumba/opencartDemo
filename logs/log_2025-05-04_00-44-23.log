@@ -1,0 +1,18 @@
+04-05-2025 00:44:24.521 INFO  internal.Utils [main] - [TestNG] Running:
+  C:\Users\admin\eclipse-workspace\myprojects\OpencartDemo\opencart-ecommerce\docker-grid.xml
+
+04-05-2025 00:44:30.960 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-1] - ***Starting TC001_AccountRegisterationTest*** 
+04-05-2025 00:44:31.251 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-1] - Clicked on my account link
+04-05-2025 00:44:32.241 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-1] - Clicked on registeration link
+04-05-2025 00:44:32.246 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-1] - Providing customer details
+04-05-2025 00:44:34.633 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-1] - Validating Account success message
+04-05-2025 00:44:34.822 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-2] - ***Starting TC001_AccountRegisterationTest*** 
+04-05-2025 00:44:34.848 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-1] - ****End TC001_AccountRegisterationTest***
+04-05-2025 00:44:42.151 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-2] - ***Starting TC001_AccountRegisterationTest*** 
+04-05-2025 00:44:42.441 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-2] - Clicked on my account link
+04-05-2025 00:44:43.435 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-2] - Clicked on registeration link
+04-05-2025 00:44:43.436 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-2] - Providing customer details
+04-05-2025 00:44:46.739 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-2] - Validating Account success message
+04-05-2025 00:44:46.980 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-2] - ****End TC001_AccountRegisterationTest***
+04-05-2025 00:44:52.536 INFO  testCases.TC002_LoginTest [TestNG-tests-2] - ****Start TC002_LoginTest ***********
+04-05-2025 00:44:56.227 INFO  testCases.TC002_LoginTest [TestNG-tests-2] - ****End TC002_LoginTest ***********

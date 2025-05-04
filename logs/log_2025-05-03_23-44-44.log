@@ -1,0 +1,18 @@
+03-05-2025 23:44:45.516 INFO  internal.Utils [main] - [TestNG] Running:
+  C:\Users\admin\eclipse-workspace\myprojects\OpencartDemo\opencart-ecommerce\docker-grid.xml
+
+03-05-2025 23:44:50.677 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-1] - Connected to Selenium Grid at: http://localhost:4444/wd/hub
+03-05-2025 23:44:50.979 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-3] - Connected to Selenium Grid at: http://localhost:4444/wd/hub
+03-05-2025 23:44:52.343 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-1] - ***Starting TC001_AccountRegisterationTest*** 
+03-05-2025 23:44:53.067 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-3] - ***Starting TC001_AccountRegisterationTest*** 
+03-05-2025 23:44:53.348 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-1] - Clicked on my account link
+03-05-2025 23:44:53.464 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-3] - Clicked on my account link
+03-05-2025 23:44:54.743 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-2] - Connected to Selenium Grid at: http://localhost:4444/wd/hub
+03-05-2025 23:44:57.124 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-2] - ***Starting TC001_AccountRegisterationTest*** 
+03-05-2025 23:44:57.500 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-2] - Clicked on my account link
+03-05-2025 23:44:58.343 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-2] - Clicked on registeration link
+03-05-2025 23:44:58.348 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-2] - Providing customer details
+03-05-2025 23:45:00.564 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-2] - Validating Account success message
+03-05-2025 23:45:00.775 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-2] - ****End TC001_AccountRegisterationTest***
+03-05-2025 23:45:12.083 INFO  testCases.TC002_LoginTest [TestNG-tests-2] - Connected to Selenium Grid at: http://localhost:4444/wd/hub
+03-05-2025 23:45:15.648 INFO  testCases.TC002_LoginTest [TestNG-tests-2] - ****Start TC002_LoginTest ***********

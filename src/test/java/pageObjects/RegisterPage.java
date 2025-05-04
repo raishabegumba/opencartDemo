@@ -9,8 +9,7 @@ public class RegisterPage extends BasePage {
 	public RegisterPage(WebDriver driver) {
 		super(driver);
 	}
-	
-	
+		
 	@FindBy(xpath="//input[@id='input-firstname']")
 	WebElement txtFirstName;
 

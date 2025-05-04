@@ -1,0 +1,19 @@
+03-05-2025 21:01:28.287 INFO  internal.Utils [main] - [TestNG] Running:
+  C:\Users\admin\eclipse-workspace\myprojects\OpencartDemo\opencart-ecommerce\docker-grid.xml
+
+03-05-2025 21:01:39.297 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-2] - ***Starting TC001_AccountRegisterationTest*** 
+03-05-2025 21:01:40.025 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-2] - Clicked on my account link
+03-05-2025 21:01:41.204 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-2] - Clicked on registeration link
+03-05-2025 21:01:41.208 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-2] - Providing customer details
+03-05-2025 21:01:43.396 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-2] - Validating Account success message
+03-05-2025 21:01:43.472 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-2] - ****End TC001_AccountRegisterationTest***
+03-05-2025 21:01:51.776 INFO  testCases.TC002_LoginTest [TestNG-tests-2] - ****Start TC002_LoginTest ***********
+03-05-2025 21:01:54.720 INFO  testCases.TC002_LoginTest [TestNG-tests-2] - ****End TC002_LoginTest ***********
+03-05-2025 21:01:59.048 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-1] - ***Starting TC001_AccountRegisterationTest*** 
+03-05-2025 21:01:59.604 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-1] - Clicked on my account link
+03-05-2025 21:02:01.225 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-1] - Clicked on registeration link
+03-05-2025 21:02:01.235 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-1] - Providing customer details
+03-05-2025 21:02:05.119 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-1] - Validating Account success message
+03-05-2025 21:02:05.406 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-1] - ****End TC001_AccountRegisterationTest***
+03-05-2025 21:02:09.407 INFO  testCases.TC002_LoginTest [TestNG-tests-1] - ****Start TC002_LoginTest ***********
+03-05-2025 21:02:11.721 INFO  testCases.TC002_LoginTest [TestNG-tests-1] - ****End TC002_LoginTest ***********

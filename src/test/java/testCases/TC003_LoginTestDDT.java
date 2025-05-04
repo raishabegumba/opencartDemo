@@ -18,24 +18,28 @@ public class TC003_LoginTestDDT extends BaseClass{
 		try
 		{
 			//home page
+			logger.info("**** My account -> Login link clicked***********" );
 			HomePage hp = new HomePage(driver);
 			hp.clickMyAcc();
 			hp.clickLgn();
 
+			logger.info("**** Passed credentials***********" );
 			//login Page
 			LoginPage lp= new LoginPage(driver);
 			lp.setUsername(un);
 			lp.setPassword(pwd);
-			lp.clickLogin();
+			lp.clickLoginBtn();
 
+			
 			//My Account Page 
 			MyAccPage mp= new MyAccPage(driver);
 			boolean targetPage=mp.isMyAccountDisplayed();
 			System.out.println("My account page is displayed?:"+targetPage );
 			System.out.println("login status is:"+ status);
 			
+			logger.info("**** My account -> Logout link not clicked ***********" );
 			//Thread.sleep(5000);
-			if(status.equalsIgnoreCase("valid"))
+			if(status.equalsIgnoreCase("valid")) 
 			{
 				if(targetPage==true)
 				{

@@ -1,0 +1,11 @@
+03-05-2025 20:02:27.399 INFO  internal.Utils [main] - [TestNG] Running:
+  C:\Users\admin\eclipse-workspace\myprojects\OpencartDemo\opencart-ecommerce\TestNG.xml
+
+03-05-2025 20:02:32.438 INFO  testCases.TC001_AccountRegisterationTest [main] - ***Starting TC001_AccountRegisterationTest*** 
+03-05-2025 20:02:32.659 INFO  testCases.TC001_AccountRegisterationTest [main] - Clicked on my account link
+03-05-2025 20:02:33.309 INFO  testCases.TC001_AccountRegisterationTest [main] - Clicked on registeration link
+03-05-2025 20:02:33.316 INFO  testCases.TC001_AccountRegisterationTest [main] - Providing customer details
+03-05-2025 20:02:35.368 INFO  testCases.TC001_AccountRegisterationTest [main] - Validating Account success message
+03-05-2025 20:02:35.455 INFO  testCases.TC001_AccountRegisterationTest [main] - ****End TC001_AccountRegisterationTest***
+03-05-2025 20:02:38.385 INFO  testCases.TC002_LoginTest [main] - ****Start TC002_LoginTest ***********
+03-05-2025 20:02:40.499 INFO  testCases.TC002_LoginTest [main] - ****End TC002_LoginTest ***********

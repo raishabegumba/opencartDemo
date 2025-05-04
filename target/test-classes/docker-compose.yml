@@ -1,8 +1,16 @@
-# To execute this docker compose yml file use `docker compose -f docker-compose-v3.yml up`
-# Add the `-d` flag at the end for detached execution
-# To stop the execution, hit Ctrl+C, and then `docker compose -f docker-compose-v3.yml down`
-version: "3"
 services:
+  selenium-hub:
+    image: selenium/hub:4.24.0-20240830
+    container_name: selenium-hub
+    ports:
+      - "4442:4442"
+      - "4443:4443"
+      - "4455:4444"  # Changed host port from 4444 to 4455 to avoid conflict
+    environment:
+      - GRID_TIMEOUT=300
+      - GRID_MAX_SESSION=5
+    shm_size: 2gb
+
   chrome:
     image: selenium/node-chrome:4.24.0-20240830
     shm_size: 2gb
@@ -32,11 +40,3 @@ services:
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-
-  selenium-hub:
-    image: selenium/hub:4.24.0-20240830
-    container_name: selenium-hub
-    ports:
-      - "4442:4442"
-      - "4443:4443"
-      - "4444:4444"

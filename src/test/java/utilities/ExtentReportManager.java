@@ -44,7 +44,7 @@ public class ExtentReportManager implements ITestListener {
 
 		extent = new ExtentReports();
 		extent.attachReporter(sparkReporter);
-		extent.setSystemInfo("Application", "opencart");
+		extent.setSystemInfo("Project", "opencart");
 		extent.setSystemInfo("Module", "Admin");
 		extent.setSystemInfo("Sub Module", "Customers");
 		extent.setSystemInfo("User Name", System.getProperty("user.name"));
@@ -77,9 +77,11 @@ public class ExtentReportManager implements ITestListener {
 		
 		test.log(Status.FAIL, result.getName() + " got failed");
 		test.log(Status.INFO, result.getThrowable().getMessage());
+		
 		try {
+		
 			String imgPath = new BaseClass().captureScreen(result.getName());
-			test.addScreenCaptureFromPath(imgPath);
+			test.addScreenCaptureFromPath(imgPath);// to show my screenshot in the report
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
@@ -96,7 +98,9 @@ public class ExtentReportManager implements ITestListener {
 		extent.flush();
 		String pathOfExtentReport= System.getProperty("user.dir")+"\\reports\\"+repName;
 		File extentReport = new File(pathOfExtentReport);
+		//to open the report automatically 
 		try {
+		// to open the test report automatically after test execution is completed 
 		Desktop.getDesktop().browse (extentReport.toURI());
 		} catch (IOException e) {
 		e.printStackTrace();

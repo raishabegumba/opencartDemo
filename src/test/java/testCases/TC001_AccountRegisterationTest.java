@@ -3,7 +3,6 @@ package testCases;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-
 import pageObjects.HomePage;
 import pageObjects.RegisterPage;
 import testBasics.BaseClass;
@@ -11,6 +10,7 @@ import testBasics.BaseClass;
 public class TC001_AccountRegisterationTest extends BaseClass{
 	
 	@Test(groups= {"Sanity","Master"})
+	//@Test
 	public void verify_account_registeration() 
 	{
 		logger.info("***Starting TC001_AccountRegisterationTest*** ");
@@ -50,7 +50,7 @@ public class TC001_AccountRegisterationTest extends BaseClass{
 		}
 		catch(Exception e)
 		{
-			Assert.fail();
+			Assert.fail();//forceful fail the testcase
 		}
 
 		logger.info("****End TC001_AccountRegisterationTest***");

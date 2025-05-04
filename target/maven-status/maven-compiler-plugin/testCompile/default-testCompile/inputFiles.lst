@@ -7,6 +7,7 @@ C:\Users\admin\eclipse-workspace\myprojects\OpencartDemo\opencart-ecommerce\src\
 C:\Users\admin\eclipse-workspace\myprojects\OpencartDemo\opencart-ecommerce\src\test\java\testCases\TC001_AccountRegisterationTest.java
 C:\Users\admin\eclipse-workspace\myprojects\OpencartDemo\opencart-ecommerce\src\test\java\testCases\TC002_LoginTest.java
 C:\Users\admin\eclipse-workspace\myprojects\OpencartDemo\opencart-ecommerce\src\test\java\testCases\TC003_LoginTestDDT.java
+C:\Users\admin\eclipse-workspace\myprojects\OpencartDemo\opencart-ecommerce\src\test\java\testCases\TC004_AccountRegisterationDDTTest.java
 C:\Users\admin\eclipse-workspace\myprojects\OpencartDemo\opencart-ecommerce\src\test\java\utilities\DataProviderClass.java
 C:\Users\admin\eclipse-workspace\myprojects\OpencartDemo\opencart-ecommerce\src\test\java\utilities\ExcelUtities.java
 C:\Users\admin\eclipse-workspace\myprojects\OpencartDemo\opencart-ecommerce\src\test\java\utilities\ExtentReportManager.java

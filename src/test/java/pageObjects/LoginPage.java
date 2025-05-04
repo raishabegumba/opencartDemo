@@ -29,7 +29,7 @@ public class LoginPage extends BasePage {
 		txtPassword.sendKeys(pwd);
 	}
 	
-	public void clickLogin()
+	public void clickLoginBtn()
 	{
 		btnLogin.click();
 		

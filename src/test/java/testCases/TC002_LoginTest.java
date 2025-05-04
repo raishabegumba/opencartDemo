@@ -11,7 +11,7 @@ import testBasics.BaseClass;
 
 public class TC002_LoginTest extends BaseClass{
 
-	@Test(groups= {"Regression","Master"})
+	@Test(groups= {"Regression", "Master"}) 
 	public void verifyLogin()
 	{
 
@@ -25,15 +25,15 @@ public class TC002_LoginTest extends BaseClass{
 
 			//login Page
 			LoginPage lp= new LoginPage(driver);
-			lp.setUsername(p.getProperty("UN"));
-			lp.setPassword(p.getProperty("PWD"));
-			lp.clickLogin();
+			lp.setUsername(p.getProperty("Username"));
+			lp.setPassword(p.getProperty("Password"));
+			lp.clickLoginBtn();
 
 			//My Account Page 
 			MyAccPage mp= new MyAccPage(driver);
 			boolean targetPage=mp.isMyAccountDisplayed();
-			Assert.assertTrue(targetPage);
-
+			Assert.assertTrue(targetPage);//last statment of  testcase 
+		
 		}
 		catch(Exception e)
 		{

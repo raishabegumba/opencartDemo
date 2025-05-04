@@ -15,10 +15,14 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtities {
-	public ExcelUtities(String path) {
-		this.path = path;
+	String path;
+	//Accepting the path of xls file through constructor 
+	public ExcelUtities(String filepath) {
+		path = filepath;
 	}
 
+	
+			
 	public FileInputStream fi;
 	public FileOutputStream fo;
 	public XSSFWorkbook workbook;
@@ -26,8 +30,9 @@ public class ExcelUtities {
 	public XSSFRow row;
 	public XSSFCell cell;
 	public CellStyle style;
-	String path;
-
+	
+	
+//to find rows in specific xls
 	public int getRowCount(String sheetName) throws IOException {
 		fi = new FileInputStream(path);
 		workbook = new XSSFWorkbook(fi);
@@ -40,36 +45,54 @@ public class ExcelUtities {
 
 	public int getcellcount( String sheetName, int rownum) throws IOException {
 		fi = new FileInputStream(path);
-		workbook = new XSSFWorkbook(fi);
-		sheet = workbook.getSheet(sheetName);
-		row = sheet.getRow(rownum);
-		int cellcount = row.getLastCellNum();
-		workbook.close();
-		fi.close();
-		return cellcount;
-	}
+	    workbook = new XSSFWorkbook(fi);
+	    sheet = workbook.getSheet(sheetName);
+	    row = sheet.getRow(rownum);
+	    
+	    int cellcount = 0;
+	    if (row != null) {
+	        cellcount = row.getLastCellNum();
+	    }
+
+	    workbook.close();
+	    fi.close();
+	    return cellcount;
+}
+	
 
 	public String getcelldata( String sheetName, int rownum, int colnum) throws IOException {
 		fi = new FileInputStream(path);
-		workbook = new XSSFWorkbook(fi);
-		sheet = workbook.getSheet(sheetName);
-		row = sheet.getRow(rownum);
-		cell = row.getCell(colnum);
+	    workbook = new XSSFWorkbook(fi);
+	    sheet = workbook.getSheet(sheetName);
 
-		String data;
-		try {
-			// data = cell.toString();
-			DataFormatter formatter = new DataFormatter();
-			data = formatter.formatCellValue(cell);
-		} catch (Exception e) {
-			data = "";
-		}
-		workbook.close();
-		fi.close();
-		return data;
+	    row = sheet.getRow(rownum);
+	    if (row == null) {
+	        workbook.close();
+	        fi.close();
+	        return ""; // or throw exception if row must exist
+	    }
+
+	    cell = row.getCell(colnum);
+	    if (cell == null) {
+	        workbook.close();
+	        fi.close();
+	        return ""; // or throw exception if cell must exist
+	    }
+
+	    String data;
+	    try {
+	        DataFormatter formatter = new DataFormatter();
+	        data = formatter.formatCellValue(cell);
+	    } catch (Exception e) {
+	        data = "";
+	    }
+
+	    workbook.close();
+	    fi.close();
+	    return data;
 	}
 
-/*	public void setcelldata( String sheetName, int rownum, int colnum, String data) throws IOException {
+	public void setcelldata( String sheetName, int rownum, int colnum, String data) throws IOException {
 		fi = new FileInputStream(path);
 		workbook = new XSSFWorkbook(fi);
 		sheet = workbook.getSheet(sheetName);
@@ -77,21 +100,25 @@ public class ExcelUtities {
 		cell = row.createCell(colnum);
 		cell.setCellValue(data);
 		fo = new FileOutputStream(path);
-		workbook.write(fo);
+		workbook.write(fo);//this will actually set content into excel
 		workbook.close();
 		fi.close();
 		fo.close();
 
-} */
+} 
+/*	
 	public void setCellData(String sheetName, int rownum, int colnum, String data) throws IOException
 	{
+		
+	/*
 	File xlfile=new File(path);
 	if(!xlfile.exists()) // If file not exists then create new file
 	{
 	workbook=new XSSFWorkbook();
 	fo=new FileOutputStream(path) ;
-	workbook.write(fo);
+	workbook.write(fo);//perform write operation
 	}
+	
 	fi=new FileInputStream(path);
 	workbook=new XSSFWorkbook(fi);
 	
@@ -110,7 +137,7 @@ public class ExcelUtities {
 	fi. close();
 	fo.close() ;
 }
-	
+*/
 
 	public void fillgreencolour(String sheetName, int rownum, int cellnum) throws IOException {
 		fi = new FileInputStream(path);
