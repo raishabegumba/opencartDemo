@@ -14,7 +14,14 @@
             <class name="testCases.TC002_LoginTest"/>
         </classes>
     </test>
-  
-    
+   
+    <test  name="linux-firefox test">
+        <parameter name="browser" value="firefox"></parameter>
+        <parameter name="os" value="Linux"></parameter>
+        <classes>
+            <class name="testCases.TC001_AccountRegisterationTest"/>
+            <class name="testCases.TC002_LoginTest"/>
+        </classes>
+    </test>
    
 </suite>

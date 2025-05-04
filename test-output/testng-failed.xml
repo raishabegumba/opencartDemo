@@ -15,13 +15,6 @@
           <include name="verifyLogin"/>
         </methods>
       </class> <!-- testCases.TC002_LoginTest -->
-      <class name="testCases.TC001_AccountRegisterationTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-          <include name="verify_account_registeration"/>
-        </methods>
-      </class> <!-- testCases.TC001_AccountRegisterationTest -->
     </classes>
   </test> <!-- linux-chrome test(failed) -->
 </suite> <!-- Failed suite [GridSuite] -->

@@ -103,7 +103,7 @@ public class BaseClass {
 			}
 	
 			// Initialize the RemoteWebDriver
-			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
+			driver = new RemoteWebDriver(new URL("http://localhost:4455/wd/hub"), capabilities);
 			  // **Use environment variable for remote Hub URL**
 	       /* String hubURL = System.getenv("SELENIUM_HUB_URL") != null ?
 	                        System.getenv("SELENIUM_HUB_URL") : 
@@ -132,17 +132,16 @@ public class BaseClass {
 	}
 
 	@AfterClass(groups= {"Sanity","Regression","Master","Datadriven"})
-	//@AfterClass
-	public void tearDown()
-	{
-		 // Only call quit() if the driver is not null and still running
-        if (driver != null) {
-            try {
-                driver.quit();
-            } catch (Exception e) {
-                logger.error("Error while quitting the WebDriver: " + e.getMessage());
-            }
-        }
+	public void tearDown() {
+	    // Ensure driver is not null before quitting
+	    if (driver != null) {
+	        try {
+	            driver.quit();
+	            logger.info("Driver session closed successfully.");
+	        } catch (Exception e) {
+	            logger.error("Error while quitting the WebDriver: " + e.getMessage());
+	        }
+	    }
 	}
 
 	public String captureScreen(String tname) throws IOException {

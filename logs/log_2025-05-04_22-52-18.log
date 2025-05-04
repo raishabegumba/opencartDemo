@@ -1,0 +1,12 @@
+04-05-2025 22:52:18.680 INFO  internal.Utils [main] - [TestNG] Running:
+  C:\Users\admin\eclipse-workspace\myprojects\OpencartDemo\opencart-ecommerce\docker-grid.xml
+
+04-05-2025 22:52:24.585 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-1] - ***Starting TC001_AccountRegisterationTest*** 
+04-05-2025 22:52:24.901 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-1] - Clicked on my account link
+04-05-2025 22:52:25.671 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-1] - Clicked on registeration link
+04-05-2025 22:52:25.679 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-1] - Providing customer details
+04-05-2025 22:52:28.628 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-1] - Validating Account success message
+04-05-2025 22:52:28.777 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-2] - ***Starting TC001_AccountRegisterationTest*** 
+04-05-2025 22:52:28.820 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-1] - ****End TC001_AccountRegisterationTest***
+04-05-2025 22:52:30.189 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-1] - Driver session closed successfully.
+04-05-2025 22:52:30.219 INFO  testCases.TC001_AccountRegisterationTest [TestNG-tests-2] - Driver session closed successfully.
